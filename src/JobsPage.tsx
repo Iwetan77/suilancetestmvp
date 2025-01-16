@@ -7,6 +7,68 @@ import Navbar from "./components/Navbar";
 export default function JobsPage() {
   const [activeTab, setActiveTab] = useState("bounties");
 
+  const opportunities = [
+    {
+      id: 98,
+      title: "Frontend Development Task",
+      company: "Company Name",
+      reward: "500 USDC",
+      icon: (
+        <svg
+          className='h-6 w-6 text-gray-600'
+          fill='none'
+          stroke='currentColor'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeWidth='2'
+          viewBox='0 0 24 24'
+        >
+          <path d='M12 2v20' />
+          <path d='M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6' />
+        </svg>
+      ),
+    },
+    {
+      id: 99,
+      title: "Backend API Development",
+      company: "Tech Solutions",
+      reward: "800 USDC",
+      icon: (
+        <svg
+          className='h-6 w-6 text-gray-600'
+          fill='none'
+          stroke='currentColor'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeWidth='2'
+          viewBox='0 0 24 24'
+        >
+          <path d='M3 10h18M9 21V3m6 18V3' />
+        </svg>
+      ),
+    },
+    {
+      id: 100,
+      title: "UI/UX Design",
+      company: "Creative Minds",
+      reward: "600 USDC",
+      icon: (
+        <svg
+          className='h-6 w-6 text-gray-600'
+          fill='none'
+          stroke='currentColor'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeWidth='2'
+          viewBox='0 0 24 24'
+        >
+          <rect x='3' y='3' width='18' height='18' rx='2' ry='2' />
+          <path d='M8 3v18M16 3v18' />
+        </svg>
+      ),
+    },
+  ];
+
   return (
     <div className='min-h-screen bg-white'>
       {/* Main Navigation */}
@@ -52,9 +114,7 @@ export default function JobsPage() {
         <div className='space-y-8'>
           {/* Welcome Section */}
           <div className='rounded-lg bg-blue-600 p-6'>
-            <h1 className='text-2xl font-bold text-white'>
-              Welcome to the Platform
-            </h1>
+            <h1 className='text-2xl font-bold text-white'>Welcome Adrian</h1>
             <p className='text-white/80'>
               Discover opportunities and start earning
             </p>
@@ -80,47 +140,39 @@ export default function JobsPage() {
           </div>
 
           {/* Opportunities List */}
-          <div className='space-y-4'>
-            {/* Example Opportunity */}
-            <Link to={"/job/98"}>
-              <div className='rounded-lg border border-gray-200 p-4 hover:shadow-md'>
-                <div className='flex items-start gap-4'>
-                  <div className='rounded-lg bg-gray-100 p-2'>
-                    <svg
-                      className='h-6 w-6 text-gray-600'
-                      fill='none'
-                      stroke='currentColor'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth='2'
-                      viewBox='0 0 24 24'
-                    >
-                      <path d='M12 2v20' />
-                      <path d='M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6' />
-                    </svg>
-                  </div>
-                  <div className='flex-1'>
-                    <h3 className='font-semibold'>Frontend Development Task</h3>
-                    <p className='text-sm text-gray-500'>Company Name</p>
-                  </div>
-                  <div className='flex items-center gap-2'>
-                    <svg
-                      className='h-4 w-4 text-blue-500'
-                      fill='none'
-                      stroke='currentColor'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth='2'
-                      viewBox='0 0 24 24'
-                    >
-                      <circle cx='12' cy='12' r='10' />
-                      <path d='M12 2v20' />
-                    </svg>
-                    <span className='font-medium'>500 USDC</span>
+          <div className='flex flex-col gap-4 space-y-4'>
+            {opportunities.map((opportunity) => (
+              <Link to={`/job/${opportunity.id}`} key={opportunity.id}>
+                <div className='rounded-lg border border-gray-200 p-4 hover:shadow-md'>
+                  <div className='flex items-start gap-4'>
+                    <div className='rounded-lg bg-gray-100 p-2'>
+                      {opportunity.icon}
+                    </div>
+                    <div className='flex-1'>
+                      <h3 className='font-semibold'>{opportunity.title}</h3>
+                      <p className='text-sm text-gray-500'>
+                        {opportunity.company}
+                      </p>
+                    </div>
+                    <div className='flex items-center gap-2'>
+                      <svg
+                        className='h-4 w-4 text-blue-500'
+                        fill='none'
+                        stroke='currentColor'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth='2'
+                        viewBox='0 0 24 24'
+                      >
+                        <circle cx='12' cy='12' r='10' />
+                        <path d='M12 2v20' />
+                      </svg>
+                      <span className='font-medium'>{opportunity.reward}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            ))}
           </div>
         </div>
 

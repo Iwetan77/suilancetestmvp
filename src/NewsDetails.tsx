@@ -1,122 +1,75 @@
+// src/NewsDetails.tsx
 import React from "react";
+import { useParams } from "react-router-dom";
+import { blogPosts } from "./data/data";
+import Navbar from "./components/Navbar";
 
 const NewsDetails: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
+  const post = blogPosts.find((blog) => blog.id === Number(id));
+
+  if (!post) {
+    return (
+      <div className='text-center py-10'>
+        <h2 className='text-2xl font-bold text-gray-900'>Post not found</h2>
+      </div>
+    );
+  }
+
   return (
-    <div className='max-w-screen-xl mx-auto p-5 sm:p-8 md:p-12 relative'>
+    <div className='max-w-screen-xl mx-auto p-5 sm:p-8 md:p-12'>
+      <Navbar />
+      {/* Hero Section */}
       <div
-        className='bg-cover h-64 text-center overflow-hidden'
+        className='bg-cover bg-center h-[450px] rounded-lg overflow-hidden'
         style={{
-          height: "450px",
-          backgroundImage:
-            "url('https://api.time.com/wp-content/uploads/2020/07/never-trumpers-2020-election-01.jpg?quality=85&w=1201&h=676&crop=1')",
+          backgroundImage: `url(${post.image})`,
         }}
-      ></div>
-      <div className='max-w-2xl mx-auto'>
-        <div className='mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal'>
-          <div className=''>
-            <a
-              href='#'
-              className='text-xs text-indigo-600 uppercase font-medium hover:text-gray-900 transition duration-500 ease-in-out'
-            >
-              Election
-            </a>
-            ,
-            <a
-              href='#'
-              className='text-xs text-indigo-600 uppercase font-medium hover:text-gray-900 transition duration-500 ease-in-out'
-            >
-              Politics
-            </a>
-            <a href='#' className='text-gray-900 font-bold text-3xl mb-2'>
-              Revenge of the Never Trumpers
-            </a>
-            <p className='text-gray-700 text-xs mt-2'>
-              Written By:
+      >
+        <div className='bg-gradient-to-t from-black to-transparent h-full w-full flex items-center justify-center'>
+          <h1 className='text-4xl font-extrabold text-white text-center p-5'>
+            {post.title}
+          </h1>
+        </div>
+      </div>
+
+      {/* Content Section */}
+      <div className='max-w-3xl mx-auto mt-8'>
+        <div className='bg-white rounded-lg shadow-lg p-6'>
+          <div className='flex items-center justify-between'>
+            <div>
+              <p className='text-sm text-gray-500'>
+                <span className='font-semibold text-indigo-600'>
+                  {post.author}
+                </span>{" "}
+                | {post.date}
+              </p>
+              <p className='mt-2 text-xs text-indigo-600 font-semibold uppercase'>
+                {post.category.join(", ")}
+              </p>
+            </div>
+            <div className='text-sm'>
+              <p className='text-gray-700'>Views: {post.views}</p>
+            </div>
+          </div>
+
+          <div className='mt-5'>
+            <p className='text-lg leading-relaxed text-gray-800'>
+              {post.content}
+            </p>
+          </div>
+
+          {/* Tags Section */}
+          <div className='flex flex-wrap mt-6 gap-3'>
+            {post.tags.map((tag) => (
               <a
+                key={tag}
                 href='#'
-                className='text-indigo-600 font-medium hover:text-gray-900 transition duration-500 ease-in-out'
+                className='text-sm text-indigo-600 font-medium hover:text-indigo-800 transition duration-300 ease-in-out'
               >
-                Ahmad Sultani
+                #{tag}
               </a>
-            </p>
-            <p className='text-base leading-8 my-5'>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </p>
-            <h3 className='text-2xl font-bold my-5'>
-              #1. What is Lorem Ipsum?
-            </h3>
-            <p className='text-base leading-8 my-5'>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </p>
-            <blockquote className='border-l-4 text-base italic leading-8 my-5 p-5 text-indigo-600'>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s
-            </blockquote>
-            <p className='text-base leading-8 my-5'>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </p>
-            <a
-              href='#'
-              className='text-xs text-indigo-600 font-medium hover:text-gray-900 transition duration-500 ease-in-out'
-            >
-              #Election
-            </a>
-            ,
-            <a
-              href='#'
-              className='text-xs text-indigo-600 font-medium hover:text-gray-900 transition duration-500 ease-in-out'
-            >
-              #people
-            </a>
-            ,
-            <a
-              href='#'
-              className='text-xs text-indigo-600 font-medium hover:text-gray-900 transition duration-500 ease-in-out'
-            >
-              #Election2020
-            </a>
-            ,
-            <a
-              href='#'
-              className='text-xs text-indigo-600 font-medium hover:text-gray-900 transition duration-500 ease-in-out'
-            >
-              #trump
-            </a>
-            ,
-            <a
-              href='#'
-              className='text-xs text-indigo-600 font-medium hover:text-gray-900 transition duration-500 ease-in-out'
-            >
-              #Joe
-            </a>
+            ))}
           </div>
         </div>
       </div>
