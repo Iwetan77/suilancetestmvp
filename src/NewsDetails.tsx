@@ -39,12 +39,12 @@ const NewsDetails: React.FC = () => {
           <div className='flex items-center justify-between'>
             <div>
               <p className='text-sm text-gray-500'>
-                <span className='font-semibold text-indigo-600'>
+                <span className='font-semibold text-[#4DA2FF]'>
                   {post.author}
                 </span>{" "}
                 | {post.date}
               </p>
-              <p className='mt-2 text-xs text-indigo-600 font-semibold uppercase'>
+              <p className='mt-2 text-xs text-[#4DA2FF] font-semibold uppercase'>
                 {post.category.join(", ")}
               </p>
             </div>
@@ -65,7 +65,7 @@ const NewsDetails: React.FC = () => {
               <a
                 key={tag}
                 href='#'
-                className='text-sm text-indigo-600 font-medium hover:text-indigo-800 transition duration-300 ease-in-out'
+                className='text-sm text-[#4DA2FF] font-medium hover:text-indigo-800 transition duration-300 ease-in-out'
               >
                 #{tag}
               </a>

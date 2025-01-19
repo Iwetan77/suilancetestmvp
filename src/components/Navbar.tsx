@@ -6,7 +6,7 @@ const Navbar = () => {
       <div className='mx-auto flex h-16 max-w-7xl items-center justify-between px-4'>
         <div className='flex items-center gap-6'>
           <Link to='/' className='flex items-center gap-2'>
-            <div className='rounded-full bg-white border border-blue-600 p-1'>
+            <div className='rounded-full bg-white border border-[#4DA2FF] p-1'>
               <img
                 src='/src/assets/sui-sym.jpg'
                 alt='sui-logo'
@@ -37,8 +37,8 @@ const Navbar = () => {
             </Link>
           </nav>
         </div>
-        <button className='rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700'>
-          Connect Wallet
+        <button className='rounded-lg bg-[#4DA2FF] px-4 py-2 text-sm font-medium text-white hover:bg-blue-700'>
+          Login
         </button>
       </div>
     </header>

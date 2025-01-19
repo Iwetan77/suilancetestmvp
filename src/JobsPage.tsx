@@ -113,7 +113,7 @@ export default function JobsPage() {
       <div className='mx-auto grid max-w-7xl gap-8 px-4 py-8 md:grid-cols-[1fr_300px]'>
         <div className='space-y-8'>
           {/* Welcome Section */}
-          <div className='rounded-lg bg-blue-600 p-6'>
+          <div className='rounded-lg bg-[#4DA2FF] p-6'>
             <h1 className='text-2xl font-bold text-white'>Welcome Adrian</h1>
             <p className='text-white/80'>
               Discover opportunities and start earning
@@ -129,7 +129,7 @@ export default function JobsPage() {
                   onClick={() => setActiveTab(tab)}
                   className={`border-b-2 px-4 py-2 text-sm font-medium ${
                     activeTab === tab
-                      ? "border-blue-600 text-blue-600"
+                      ? "border-[#4DA2FF] text-[#4DA2FF]"
                       : "border-transparent text-gray-500 hover:text-gray-700"
                   }`}
                 >
@@ -156,7 +156,7 @@ export default function JobsPage() {
                     </div>
                     <div className='flex items-center gap-2'>
                       <svg
-                        className='h-4 w-4 text-blue-500'
+                        className='h-4 w-4 text-[#4DA2FF]'
                         fill='none'
                         stroke='currentColor'
                         strokeLinecap='round'
@@ -201,7 +201,7 @@ export default function JobsPage() {
               <h2 className='font-semibold'>Recent Earners</h2>
               <Link
                 to='/leaderboard'
-                className='text-sm text-blue-600 hover:text-blue-700'
+                className='text-sm text-[#4DA2FF] hover:text-blue-700'
               >
                 View All
               </Link>

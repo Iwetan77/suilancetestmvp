@@ -48,11 +48,11 @@ const JobDetails: React.FC = () => {
                 <p className='text-gray-700 font-semibold'>Remaining Time</p>
                 <h2 className='text-2xl font-bold text-gray-800'>1d:9h:6m</h2>
               </div>
-              <button className='w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700'>
+              <button className='w-full bg-[#4DA2FF] text-white py-3 rounded-lg font-semibold hover:bg-blue-700'>
                 Submit Application
               </button>
-              <p className='text-sm text-gray-500 border-t pt-4'>
-                Don’t start working just yet! Apply first, and then begin
+              <p className='text-sm text-gray-500 bg-green-100 border-t p-4'>
+                ⚠️ Don’t start working just yet! Apply first, and then begin
                 working only once you’ve been hired for the project.
               </p>
             </div>

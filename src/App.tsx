@@ -16,7 +16,7 @@ const App: React.FC = () => {
     <div>
       <ScrollToTop />
       <Routes>
-        <Route path='/' element={<Hero />} />
+        <Route path='/' element={<JobsPage />} />
         <Route path='/job' element={<JobsPage />} />
         <Route path='/job/:id' element={<JobDetails />} />
         <Route path='/news' element={<NewsPage />} />

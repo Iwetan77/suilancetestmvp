@@ -40,14 +40,14 @@ const GrantPost: React.FC<GrantPostProps> = ({
       <p className='text-gray-700'>{postText}</p>
 
       {/* Grant Card */}
-      <div className='bg-purple-600 text-white rounded-xl p-4 text-center'>
+      <div className='bg-[#4DA2FF] text-white rounded-xl p-4 text-center'>
         <div className='text-3xl font-bold flex justify-center items-center space-x-2'>
           <span>${grantAmount} USDC</span>
           <span role='img' aria-label='celebration'>
             🎉
           </span>
         </div>
-        <button className='mt-4 bg-white text-purple-600 font-medium rounded-full px-6 py-2'>
+        <button className='mt-4 bg-white text-[#4DA2FF] font-medium rounded-full px-6 py-2'>
           GRANT
         </button>
         <p className='mt-4 text-sm text-white/80'>
@@ -60,7 +60,7 @@ const GrantPost: React.FC<GrantPostProps> = ({
         <div className='flex items-center space-x-2'>
           <span>❤️ {reactions.likes}</span>
           <span>💬 {reactions.comments}</span>
-          <span>🔄 {reactions.shares}</span>
+          <span>💲 {reactions.shares}</span>
         </div>
       </div>
     </div>
