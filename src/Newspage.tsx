@@ -83,7 +83,7 @@ export default function JobsPage() {
 
         {/* Sidebar */}
         <div className='space-y-8'>
-          <div className='relative flex justify-center items-center gap-2 z-10 ml-8 mb-4 max-w-md'>
+          <div className='relative flex justify-center items-center gap-2 ml-8 mb-4 max-w-md'>
             <div>
               {" "}
               <h1 className='text-xl font-bold'>Become a Sponsor</h1>
