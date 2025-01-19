@@ -76,7 +76,7 @@ export default function JobsPage() {
 
       {/* Secondary Navigation */}
       <div className='border-b border-gray-200 bg-gray-50'>
-        <div className='mx-auto flex h-12 max-w-7xl items-center gap-4 px-4'>
+        <div className='mx-auto hidden md:flex h-12 max-w-7xl items-center gap-4 px-4'>
           <Link
             to='/all'
             className='text-sm font-medium text-gray-700 hover:text-gray-900'

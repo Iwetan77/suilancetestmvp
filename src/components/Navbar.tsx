@@ -16,7 +16,7 @@ const Navbar = () => {
             </div>
             <span className='font-bold'>Suilance</span>
           </Link>
-          <nav className='flex items-center gap-6'>
+          <nav className='md:flex items-center gap-6 hidden'>
             <Link
               to='/'
               className='text-sm font-medium text-gray-700 hover:text-gray-900'
