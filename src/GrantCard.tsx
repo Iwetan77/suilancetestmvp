@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "./components/Modal";
+import { useNavigate } from "react-router";
 
 interface GrantPostProps {
   username: string;
-  handle: string;
+  handle: number;
   avatarUrl: string;
   postText: string;
   grantAmount: number;
@@ -18,9 +20,26 @@ const GrantPost: React.FC<GrantPostProps> = ({
   handle,
   avatarUrl,
   postText,
-  grantAmount,
+  // grantAmount,
   reactions,
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [tipAmount, setTipAmount] = useState("");
+  const navigate = useNavigate();
+
+  const handleInputChange = (value: string) => {
+    setTipAmount(value);
+  };
+
+  const handleConfirm = () => {
+    alert(`You have tipped ${tipAmount}!`);
+    setIsOpen(false);
+  };
+
+  const handlePostClick = () => {
+    // Navigate to the news/:id route
+    navigate(`/news/${handle}`);
+  };
   return (
     <div className='max-w-xl mx-auto bg-white rounded-xl shadow-md p-6 space-y-4'>
       {/* Header Section */}
@@ -40,8 +59,12 @@ const GrantPost: React.FC<GrantPostProps> = ({
       <p className='text-gray-700'>{postText}</p>
 
       {/* Grant Card */}
-      <div className='bg-[#4DA2FF] text-white rounded-xl p-4 text-center'>
-        <div className='text-3xl font-bold flex justify-center items-center space-x-2'>
+      <div
+        onClick={handlePostClick}
+        className='bg-[#4DA2FF] text-white rounded-xl max-w-5xl text-center'
+      >
+        <img src={avatarUrl} alt={`${username}'s avatar`} className='' />
+        {/* <div className='text-3xl font-bold flex justify-center items-center space-x-2'>
           <span>${grantAmount} USDC</span>
           <span role='img' aria-label='celebration'>
             🎉
@@ -52,17 +75,31 @@ const GrantPost: React.FC<GrantPostProps> = ({
         </button>
         <p className='mt-4 text-sm text-white/80'>
           Solana Foundation Nigeria Grants
-        </p>
+        </p> */}
       </div>
 
       {/* Reactions */}
       <div className='flex justify-between items-center text-gray-500 text-sm'>
         <div className='flex items-center space-x-2'>
-          <span>❤️ {reactions.likes}</span>
-          <span>💬 {reactions.comments}</span>
-          <span>💲 {reactions.shares}</span>
+          <span className='cursor-pointer'>❤️ {reactions.likes}</span>
+          <span className='cursor-pointer'>💬 {reactions.comments}</span>
+          <span className='cursor-pointer' onClick={() => setIsOpen(true)}>
+            💲 {reactions.shares}
+          </span>
         </div>
       </div>
+
+      {/* Modal */}
+      <Modal
+        isOpen={isOpen}
+        title='Tip Your Creator'
+        onClose={() => setIsOpen(false)}
+        onConfirm={handleConfirm}
+        inputValue={tipAmount}
+        onInputChange={handleInputChange}
+      >
+        <p>Support your favorite creator by tipping them!</p>
+      </Modal>
     </div>
   );
 };

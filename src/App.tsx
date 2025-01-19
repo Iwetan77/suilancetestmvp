@@ -5,6 +5,7 @@ import NewsDetails from "./NewsDetails";
 import JobsPage from "./JobsPage";
 import NewsPage from "./Newspage";
 import ScrollToTop from "./components/ScrollToTop";
+import Navbar from "./components/Navbar";
 // import Features from "./components/Features";
 // import HowItWorks from './components/HowItWorks';
 // import CTA from './components/CTA';
@@ -14,6 +15,7 @@ const App: React.FC = () => {
   return (
     <div>
       <ScrollToTop />
+      <Navbar />
       <Routes>
         <Route path='/' element={<JobsPage />} />
         <Route path='/job' element={<JobsPage />} />

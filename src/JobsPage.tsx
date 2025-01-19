@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { Link } from "react-router";
-import Navbar from "./components/Navbar";
+import Banner from "./components/Banner";
+import { useLogin } from "./context/LoginContext";
 
 export default function JobsPage() {
   const [activeTab, setActiveTab] = useState("bounties");
@@ -11,69 +12,50 @@ export default function JobsPage() {
     {
       id: 98,
       title: "Frontend Development Task",
+      dueIn: 2,
       company: "Company Name",
-      reward: "500 USDC",
+      reward: "500",
       icon: (
-        <svg
-          className='h-6 w-6 text-gray-600'
-          fill='none'
-          stroke='currentColor'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          strokeWidth='2'
-          viewBox='0 0 24 24'
-        >
-          <path d='M12 2v20' />
-          <path d='M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6' />
-        </svg>
+        <img
+          src='/src/assets/bounty1.jpg'
+          alt='bounty'
+          className='w-16 h-16 rounded-xl'
+        />
       ),
     },
     {
       id: 99,
       title: "Backend API Development",
+      dueIn: 2,
       company: "Tech Solutions",
-      reward: "800 USDC",
+      reward: "800",
       icon: (
-        <svg
-          className='h-6 w-6 text-gray-600'
-          fill='none'
-          stroke='currentColor'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          strokeWidth='2'
-          viewBox='0 0 24 24'
-        >
-          <path d='M3 10h18M9 21V3m6 18V3' />
-        </svg>
+        <img
+          src='/src/assets/bounty2.jpg'
+          alt='bounty'
+          className='w-16 h-16 rounded-xl'
+        />
       ),
     },
     {
       id: 100,
       title: "UI/UX Design",
+      dueIn: 2,
       company: "Creative Minds",
-      reward: "600 USDC",
+      reward: "600",
       icon: (
-        <svg
-          className='h-6 w-6 text-gray-600'
-          fill='none'
-          stroke='currentColor'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          strokeWidth='2'
-          viewBox='0 0 24 24'
-        >
-          <rect x='3' y='3' width='18' height='18' rx='2' ry='2' />
-          <path d='M8 3v18M16 3v18' />
-        </svg>
+        <img
+          src='/src/assets/bounty3.jpg'
+          alt='bounty'
+          className='w-16 h-16 rounded-xl'
+        />
       ),
     },
   ];
+  const { isLoggedIn } = useLogin();
 
   return (
     <div className='min-h-screen bg-white'>
-      {/* Main Navigation */}
-      <Navbar />
-
       {/* Secondary Navigation */}
       <div className='border-b border-gray-200 bg-gray-50'>
         <div className='mx-auto hidden md:flex h-12 max-w-7xl items-center gap-4 px-4'>
@@ -113,12 +95,16 @@ export default function JobsPage() {
       <div className='mx-auto grid max-w-7xl gap-8 px-4 py-8 md:grid-cols-[1fr_300px]'>
         <div className='space-y-8'>
           {/* Welcome Section */}
-          <div className='rounded-lg bg-[#4DA2FF] p-6'>
-            <h1 className='text-2xl font-bold text-white'>Welcome Adrian</h1>
-            <p className='text-white/80'>
-              Discover opportunities and start earning
-            </p>
-          </div>
+          {isLoggedIn ? (
+            <div className='rounded-lg bg-[#4DA2FF] p-6'>
+              <h1 className='text-2xl font-bold text-white'>Welcome Adrian</h1>
+              <p className='text-white/80'>
+                Discover opportunities and start earning
+              </p>
+            </div>
+          ) : (
+            <Banner />
+          )}
 
           {/* Opportunity Types */}
           <div className='border-b border-gray-200'>
@@ -145,29 +131,67 @@ export default function JobsPage() {
               <Link to={`/job/${opportunity.id}`} key={opportunity.id}>
                 <div className='rounded-lg border border-gray-200 p-4 hover:shadow-md'>
                   <div className='flex items-start gap-4'>
-                    <div className='rounded-lg bg-gray-100 p-2'>
+                    {/* Icon Section */}
+                    <div>
                       {opportunity.icon}
+                      <div className='md:hidden flex items-center gap-2'>
+                        <div className='rounded-full bg-white border border-[#4DA2FF] p-1'>
+                          <img
+                            src='/src/assets/sui-sym.jpg'
+                            alt='Coin'
+                            className='h-4 w-4'
+                          />
+                        </div>
+                        <span className='font-medium text-lg'>
+                          {opportunity.reward} USDC
+                        </span>
+                      </div>
                     </div>
+
+                    {/* Content Section */}
                     <div className='flex-1'>
-                      <h3 className='font-semibold'>{opportunity.title}</h3>
+                      {/* Title and Company */}
+                      <h3 className='font-semibold text-lg'>
+                        {opportunity.title}
+                      </h3>
                       <p className='text-sm text-gray-500'>
                         {opportunity.company}
                       </p>
+
+                      {/* Bounty and Due Date */}
+                      <div className='mt-2 flex items-center gap-4 text-sm text-gray-500'>
+                        <span className='flex items-center gap-1'>
+                          <svg
+                            className='h-4 w-4 text-[#4DA2FF]'
+                            fill='none'
+                            stroke='currentColor'
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                            strokeWidth='2'
+                            viewBox='0 0 24 24'
+                          >
+                            <circle cx='12' cy='12' r='10' />
+                            <path d='M12 2v20' />
+                          </svg>
+                          Bounty
+                        </span>
+                        <span>|</span>
+                        <span>Due in {opportunity.dueIn} days</span>
+                      </div>
                     </div>
-                    <div className='flex items-center gap-2'>
-                      <svg
-                        className='h-4 w-4 text-[#4DA2FF]'
-                        fill='none'
-                        stroke='currentColor'
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                        strokeWidth='2'
-                        viewBox='0 0 24 24'
-                      >
-                        <circle cx='12' cy='12' r='10' />
-                        <path d='M12 2v20' />
-                      </svg>
-                      <span className='font-medium'>{opportunity.reward}</span>
+
+                    {/* Reward Section */}
+                    <div className='hidden md:flex items-center gap-2'>
+                      <div className='rounded-full bg-white border border-[#4DA2FF] p-1'>
+                        <img
+                          src='/src/assets/sui-sym.jpg'
+                          alt='Coin'
+                          className='h-4 w-4'
+                        />
+                      </div>
+                      <span className='font-medium text-lg'>
+                        {opportunity.reward} USDC
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -178,6 +202,17 @@ export default function JobsPage() {
 
         {/* Sidebar */}
         <div className='space-y-8'>
+          <div className='relative flex justify-center items-center gap-2 z-10 ml-8 mb-4 max-w-md'>
+            <div>
+              {" "}
+              <h1 className='text-xl font-bold'>Become a Sponsor</h1>
+              <p>Reach 60,000+ crypto talent from one single dashboard</p>
+            </div>
+            <div>
+              <img src='/src/assets/chest.png' alt='chest' />
+            </div>
+          </div>
+
           {/* Analytics */}
           <div className='rounded-lg border border-gray-200 p-6'>
             <h2 className='mb-4 font-semibold'>Analytics</h2>

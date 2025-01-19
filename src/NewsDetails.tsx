@@ -2,7 +2,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { blogPosts } from "./data/data";
-import Navbar from "./components/Navbar";
 
 const NewsDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -18,7 +17,6 @@ const NewsDetails: React.FC = () => {
 
   return (
     <div className='max-w-screen-xl mx-auto p-5 sm:p-8 md:p-12'>
-      <Navbar />
       {/* Hero Section */}
       <div
         className='bg-cover bg-center h-[450px] rounded-lg overflow-hidden'

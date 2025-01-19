@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
-import GrantPost from "../GrantCard";
+// import GrantPost from "../GrantCard";
 // import NewsPage from "../Newspage"; // Adjust the path as per your project structure
 
 const Hero: React.FC = () => {
@@ -183,7 +183,7 @@ const Hero: React.FC = () => {
 
       {/* News Section */}
       {/* <NewsPage /> */}
-      <div className=' flex flex-col items-center justify-center gap-4 p-4'>
+      {/* <div className=' flex flex-col items-center justify-center gap-4 p-4'>
         <GrantPost
           username='Adeniran Anna'
           handle='Benav'
@@ -193,7 +193,6 @@ const Hero: React.FC = () => {
           reactions={{ likes: 192, comments: 11, shares: 4 }}
         />
 
-        {/* Second Post */}
         <GrantPost
           username='Abdulhaleem Ayomide'
           handle='haleem_dev'
@@ -202,7 +201,7 @@ const Hero: React.FC = () => {
           grantAmount={1500}
           reactions={{ likes: 45, comments: 2, shares: 1 }}
         />
-      </div>
+      </div> */}
     </div>
   );
 };

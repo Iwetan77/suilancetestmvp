@@ -1,14 +1,13 @@
 "use client";
 
 import { Link } from "react-router";
-import Navbar from "./components/Navbar";
+import { blogPosts } from "./data/data";
 import GrantPost from "./GrantCard";
 
 export default function JobsPage() {
   return (
     <div className='min-h-screen bg-white'>
       {/* Main Navigation */}
-      <Navbar />
 
       {/* Secondary Navigation */}
       <div className='border-b border-gray-200 bg-gray-50'>
@@ -49,7 +48,18 @@ export default function JobsPage() {
       <div className='mx-auto grid max-w-7xl gap-8 px-4 py-8 md:grid-cols-[1fr_300px]'>
         <div className='space-y-8'>
           {/* <NewsPage /> */}
-          <div className=' flex flex-col gap-4 p-4'>
+          {blogPosts.map((post) => (
+            <GrantPost
+              key={post.id}
+              username={post.author}
+              handle={post.id}
+              avatarUrl={post.image}
+              postText={post.summary}
+              grantAmount={0} // Adjust grantAmount if needed
+              reactions={{ likes: 10, comments: 5, shares: 2 }}
+            />
+          ))}
+          {/* <div className=' flex flex-col gap-4 p-4'>
             <GrantPost
               username='Adeniran Anna'
               handle='Benav'
@@ -59,7 +69,7 @@ export default function JobsPage() {
               reactions={{ likes: 192, comments: 11, shares: 4 }}
             />
 
-            {/* Second Post */}
+         
             <GrantPost
               username='Abdulhaleem Ayomide'
               handle='haleem_dev'
@@ -68,11 +78,21 @@ export default function JobsPage() {
               grantAmount={1500}
               reactions={{ likes: 45, comments: 2, shares: 1 }}
             />
-          </div>
+          </div> */}
         </div>
 
         {/* Sidebar */}
         <div className='space-y-8'>
+          <div className='relative flex justify-center items-center gap-2 z-10 ml-8 mb-4 max-w-md'>
+            <div>
+              {" "}
+              <h1 className='text-xl font-bold'>Become a Sponsor</h1>
+              <p>Reach 60,000+ crypto talent from one single dashboard</p>
+            </div>
+            <div>
+              <img src='/src/assets/chest.png' alt='chest' />
+            </div>
+          </div>
           {/* Analytics */}
           <div className='rounded-lg border border-gray-200 p-6'>
             <h2 className='mb-4 font-semibold'>Analytics</h2>
