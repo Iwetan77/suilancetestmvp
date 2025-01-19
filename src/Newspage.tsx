@@ -1,75 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import { Link } from "react-router";
 import Navbar from "./components/Navbar";
 import GrantPost from "./GrantCard";
 
 export default function JobsPage() {
-  const [activeTab, setActiveTab] = useState("bounties");
-
-  const opportunities = [
-    {
-      id: 98,
-      title: "Frontend Development Task",
-      company: "Company Name",
-      reward: "500 USDC",
-      icon: (
-        <svg
-          className='h-6 w-6 text-gray-600'
-          fill='none'
-          stroke='currentColor'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          strokeWidth='2'
-          viewBox='0 0 24 24'
-        >
-          <path d='M12 2v20' />
-          <path d='M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6' />
-        </svg>
-      ),
-    },
-    {
-      id: 99,
-      title: "Backend API Development",
-      company: "Tech Solutions",
-      reward: "800 USDC",
-      icon: (
-        <svg
-          className='h-6 w-6 text-gray-600'
-          fill='none'
-          stroke='currentColor'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          strokeWidth='2'
-          viewBox='0 0 24 24'
-        >
-          <path d='M3 10h18M9 21V3m6 18V3' />
-        </svg>
-      ),
-    },
-    {
-      id: 100,
-      title: "UI/UX Design",
-      company: "Creative Minds",
-      reward: "600 USDC",
-      icon: (
-        <svg
-          className='h-6 w-6 text-gray-600'
-          fill='none'
-          stroke='currentColor'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          strokeWidth='2'
-          viewBox='0 0 24 24'
-        >
-          <rect x='3' y='3' width='18' height='18' rx='2' ry='2' />
-          <path d='M8 3v18M16 3v18' />
-        </svg>
-      ),
-    },
-  ];
-
   return (
     <div className='min-h-screen bg-white'>
       {/* Main Navigation */}

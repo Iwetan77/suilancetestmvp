@@ -1,5 +1,4 @@
 import React from "react";
-import Hero from "./components/Hero";
 import { Route, Routes } from "react-router";
 import JobDetails from "./JobDetails";
 import NewsDetails from "./NewsDetails";
