@@ -137,9 +137,9 @@ export default function JobsPage() {
                       <div className='md:hidden flex items-center gap-2'>
                         <div className='rounded-full bg-white border border-[#4DA2FF] p-1'>
                           <img
-                            src='/src/assets/sui-sym.jpg'
+                            src='/src/assets/usd-coin-usdc-logo.png'
                             alt='Coin'
-                            className='h-4 w-4'
+                            className='h-5 w-5'
                           />
                         </div>
                         <span className='font-medium text-lg'>
@@ -184,9 +184,9 @@ export default function JobsPage() {
                     <div className='hidden md:flex items-center gap-2'>
                       <div className='rounded-full bg-white border border-[#4DA2FF] p-1'>
                         <img
-                          src='/src/assets/sui-sym.jpg'
+                          src='/src/assets/usd-coin-usdc-logo.png'
                           alt='Coin'
-                          className='h-4 w-4'
+                          className='h-5 w-5'
                         />
                       </div>
                       <span className='font-medium text-lg'>
@@ -246,7 +246,7 @@ export default function JobsPage() {
               <div className='flex items-center gap-4'>
                 <div className='h-10 w-10 overflow-hidden rounded-full bg-gray-200'>
                   <img
-                    src='/placeholder.svg'
+                    src='/src/assets/freelancer2.jpg'
                     alt='User avatar'
                     width={40}
                     height={40}

@@ -6,6 +6,7 @@ import JobsPage from "./JobsPage";
 import NewsPage from "./Newspage";
 import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
+import CreateSponsors from "./CreateSponsors";
 // import Features from "./components/Features";
 // import HowItWorks from './components/HowItWorks';
 // import CTA from './components/CTA';
@@ -22,6 +23,7 @@ const App: React.FC = () => {
         <Route path='/job/:id' element={<JobDetails />} />
         <Route path='/news' element={<NewsPage />} />
         <Route path='/news/:id' element={<NewsDetails />} />
+        <Route path='/new/sponsor' element={<CreateSponsors />} />
       </Routes>
     </div>
   );

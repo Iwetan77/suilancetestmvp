@@ -31,9 +31,9 @@ const JobDetails: React.FC = () => {
                 <h2 className='flex items-center gap-3 text-2xl font-bold text-gray-800'>
                   750-1.25k{" "}
                   <img
-                    src='/src/assets/sui-sym.jpg?quality=85&w=25&h=25'
-                    width={25}
-                    height={25}
+                    src='/src/assets/usd-coin-usdc-logo.png'
+                    alt='Coin'
+                    className='h-5 w-5'
                   />
                 </h2>
               </div>

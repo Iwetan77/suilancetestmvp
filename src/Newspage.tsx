@@ -126,7 +126,7 @@ export default function JobsPage() {
               <div className='flex items-center gap-4'>
                 <div className='h-10 w-10 overflow-hidden rounded-full bg-gray-200'>
                   <img
-                    src='/placeholder.svg'
+                    src='/src/assets/freelancer2.jpg'
                     alt='User avatar'
                     width={40}
                     height={40}
