@@ -2,8 +2,11 @@ import React, { createContext, useContext, useState, ReactNode } from "react";
 
 interface LoginContextProps {
   isLoggedIn: boolean;
+  isModalOpen: boolean;
   login: () => void;
   logout: () => void;
+  openModal: () => void;
+  closeModal: () => void;
 }
 
 const LoginContext = createContext<LoginContextProps | undefined>(undefined);
@@ -14,6 +17,7 @@ interface LoginProviderProps {
 
 export const LoginProvider: React.FC<LoginProviderProps> = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const login = () => {
     setIsLoggedIn(true);
@@ -23,8 +27,18 @@ export const LoginProvider: React.FC<LoginProviderProps> = ({ children }) => {
     setIsLoggedIn(false);
   };
 
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
-    <LoginContext.Provider value={{ isLoggedIn, login, logout }}>
+    <LoginContext.Provider
+      value={{ isLoggedIn, isModalOpen, login, logout, closeModal, openModal }}
+    >
       {children}
     </LoginContext.Provider>
   );

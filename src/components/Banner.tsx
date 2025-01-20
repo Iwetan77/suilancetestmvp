@@ -1,4 +1,5 @@
 import React from "react";
+import { useLogin } from "../context/LoginContext";
 
 const Banner: React.FC = () => {
   const socialProfiles = [
@@ -7,6 +8,8 @@ const Banner: React.FC = () => {
     "/src/assets/freelancer1.jpg",
     "/src/assets/bounty1.jpg",
   ];
+
+  const { openModal } = useLogin();
 
   return (
     <div
@@ -30,7 +33,10 @@ const Banner: React.FC = () => {
           decentralized world.
         </p>
         <div>
-          <button className='flex rounded-lg bg-white text-[#4DA2FF] font-medium px-6 py-2 shadow-md hover:bg-[#4DA2FF] hover:text-white transition duration-300'>
+          <button
+            onClick={() => openModal()}
+            className='flex rounded-lg bg-white text-[#4DA2FF] font-medium px-6 py-2 shadow-md hover:bg-[#4DA2FF] hover:text-white transition duration-300'
+          >
             Sign Up
           </button>
         </div>
