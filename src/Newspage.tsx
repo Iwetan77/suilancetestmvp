@@ -90,7 +90,7 @@ export default function JobsPage() {
               <p>Reach 60,000+ crypto talent from one single dashboard</p>
             </div>
             <div>
-              <img src='/src/assets/chest.png' alt='chest' />
+              <img src='/assets/chest.png' alt='chest' />
             </div>
           </div>
           {/* Analytics */}
@@ -126,7 +126,7 @@ export default function JobsPage() {
               <div className='flex items-center gap-4'>
                 <div className='h-10 w-10 overflow-hidden rounded-full bg-gray-200'>
                   <img
-                    src='/src/assets/freelancer2.jpg'
+                    src='/assets/freelancer2.jpg'
                     alt='User avatar'
                     width={40}
                     height={40}

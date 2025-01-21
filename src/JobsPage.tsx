@@ -17,7 +17,7 @@ export default function JobsPage() {
       reward: "500",
       icon: (
         <img
-          src='/src/assets/bounty1.jpg'
+          src='/assets/bounty1.jpg'
           alt='bounty'
           className='w-16 h-16 rounded-xl'
         />
@@ -31,7 +31,7 @@ export default function JobsPage() {
       reward: "800",
       icon: (
         <img
-          src='/src/assets/bounty2.jpg'
+          src='/assets/bounty2.jpg'
           alt='bounty'
           className='w-16 h-16 rounded-xl'
         />
@@ -45,7 +45,7 @@ export default function JobsPage() {
       reward: "600",
       icon: (
         <img
-          src='/src/assets/bounty3.jpg'
+          src='/assets/bounty3.jpg'
           alt='bounty'
           className='w-16 h-16 rounded-xl'
         />
@@ -59,11 +59,7 @@ export default function JobsPage() {
       company: "Hop",
       reward: "400",
       icon: (
-        <img
-          src='/src/assets/hop.png'
-          alt='hop'
-          className='w-16 h-16 rounded-xl'
-        />
+        <img src='/assets/hop.png' alt='hop' className='w-16 h-16 rounded-xl' />
       ),
     },
     {
@@ -75,7 +71,7 @@ export default function JobsPage() {
       reward: "450",
       icon: (
         <img
-          src='/src/assets/cetus.png'
+          src='/assets/cetus.png'
           alt='cetus'
           className='w-16 h-16 rounded-xl'
         />
@@ -90,7 +86,7 @@ export default function JobsPage() {
       reward: "500",
       icon: (
         <img
-          src='/src/assets/scallop.png'
+          src='/assets/scallop.png'
           alt='scallop'
           className='w-16 h-16 rounded-xl'
         />
@@ -105,7 +101,7 @@ export default function JobsPage() {
       reward: "350",
       icon: (
         <img
-          src='/src/assets/walrus.png'
+          src='/assets/walrus.png'
           alt='walrus'
           className='w-16 h-16 rounded-xl'
         />
@@ -119,11 +115,7 @@ export default function JobsPage() {
       company: "Fud",
       reward: "300",
       icon: (
-        <img
-          src='/src/assets/fud.png'
-          alt='fud'
-          className='w-16 h-16 rounded-xl'
-        />
+        <img src='/assets/fud.png' alt='fud' className='w-16 h-16 rounded-xl' />
       ),
     },
     {
@@ -135,7 +127,7 @@ export default function JobsPage() {
       reward: "550",
       icon: (
         <img
-          src='/src/assets/studioMirai.png'
+          src='/assets/studioMirai.png'
           alt='studioMirai'
           className='w-16 h-16 rounded-xl'
         />
@@ -149,11 +141,7 @@ export default function JobsPage() {
       company: "Sui",
       reward: "600",
       icon: (
-        <img
-          src='/src/assets/sui.png'
-          alt='sui'
-          className='w-16 h-16 rounded-xl'
-        />
+        <img src='/assets/sui.png' alt='sui' className='w-16 h-16 rounded-xl' />
       ),
     },
     {
@@ -165,7 +153,7 @@ export default function JobsPage() {
       reward: "400",
       icon: (
         <img
-          src='/src/assets/suiOnCampus.png'
+          src='/assets/suiOnCampus.png'
           alt='suiOnCampus'
           className='w-16 h-16 rounded-xl'
         />
@@ -258,7 +246,7 @@ export default function JobsPage() {
                       <div className='md:hidden flex items-center gap-2'>
                         <div className='rounded-full bg-white border border-[#4DA2FF] p-1'>
                           <img
-                            src='/src/assets/usd-coin-usdc-logo.png'
+                            src='/assets/usd-coin-usdc-logo.png'
                             alt='Coin'
                             className='h-5 w-5'
                           />
@@ -305,7 +293,7 @@ export default function JobsPage() {
                     <div className='hidden md:flex items-center gap-2'>
                       <div className='rounded-full bg-white border border-[#4DA2FF] p-1'>
                         <img
-                          src='/src/assets/usd-coin-usdc-logo.png'
+                          src='/assets/usd-coin-usdc-logo.png'
                           alt='Coin'
                           className='h-5 w-5'
                         />
@@ -330,7 +318,7 @@ export default function JobsPage() {
               <p>Reach 60,000+ crypto talent from one single dashboard</p>
             </div>
             <div>
-              <img src='/src/assets/chest.png' alt='chest' />
+              <img src='/assets/chest.png' alt='chest' />
             </div>
           </div>
 
@@ -367,7 +355,7 @@ export default function JobsPage() {
               <div className='flex items-center gap-4'>
                 <div className='h-10 w-10 overflow-hidden rounded-full bg-gray-200'>
                   <img
-                    src='/src/assets/freelancer2.jpg'
+                    src='/assets/freelancer2.jpg'
                     alt='User avatar'
                     width={40}
                     height={40}

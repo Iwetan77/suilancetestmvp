@@ -18,7 +18,7 @@ const Navbar = () => {
           <Link to='/' className='flex items-center gap-2'>
             <div className='rounded-full bg-white border border-[#4DA2FF] p-1'>
               <img
-                src='/src/assets/sui-sym.jpg'
+                src='/assets/sui-sym.jpg'
                 alt='sui-logo'
                 width={25}
                 height={25}

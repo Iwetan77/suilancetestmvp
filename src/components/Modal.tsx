@@ -45,7 +45,7 @@ const Modal: React.FC<ModalProps> = ({
           <div className='mt-2 flex justify-center items-center gap-5'>
             <div className='rounded-full bg-white border border-[#4DA2FF] p-1'>
               <img
-                src='/src/assets/sui-sym.jpg'
+                src='/assets/sui-sym.jpg'
                 alt='sui-logo'
                 className='h-6 w-6'
               />

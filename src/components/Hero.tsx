@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
           {/* Logo */}
           <div className='flex items-center gap-2 text-xl font-bold'>
             <img
-              src='/src/assets/sui-sym.jpg'
+              src='/assets/sui-sym.jpg'
               alt='sui-logo'
               className='w-8 h-8 rounded-full'
             />
@@ -100,7 +100,7 @@ const Hero: React.FC = () => {
           <div className='flex gap-2 items-center text-4xl font-bold'>
             <div className='rounded-full bg-white p-2'>
               <img
-                src='/src/assets/sui-sym.jpg'
+                src='/assets/sui-sym.jpg'
                 alt='sui-logo'
                 width={30}
                 height={30}
@@ -149,7 +149,7 @@ const Hero: React.FC = () => {
         <div className='bg-white rounded-lg p-8 shadow-lg space-y-6'>
           <div className='flex items-center space-x-4'>
             <img
-              src='/src/assets/freelancer1.jpg' // New image for the "getting started" section
+              src='/assets/freelancer1.jpg' // New image for the "getting started" section
               alt='Freelancer Icon'
               className='w-10 h-10 rounded-full'
             />
@@ -162,7 +162,7 @@ const Hero: React.FC = () => {
 
           <div className='flex items-center space-x-4'>
             <img
-              src='/src/assets/freelancer2.jpg' // New image for the "easy steps" section
+              src='/assets/freelancer2.jpg' // New image for the "easy steps" section
               alt='Step Icon'
               className='w-10 h-10 rounded-full'
             />
