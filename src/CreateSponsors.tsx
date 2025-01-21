@@ -1,8 +1,18 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent, useEffect } from "react";
+import { useLogin } from "./context/LoginContext";
+import { useNavigate } from "react-router";
 
 const CreateSponsorPage: React.FC = () => {
   const [profilePicture, setProfilePicture] = useState<File | null>(null);
   const [companyLogo, setCompanyLogo] = useState<File | null>(null);
+  const { isLoggedIn } = useLogin();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate("/"); // Redirect to the login page if not authenticated
+    }
+  }, [isLoggedIn, navigate]);
 
   const handleFileChange = (
     e: ChangeEvent<HTMLInputElement>,

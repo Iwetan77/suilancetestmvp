@@ -1,10 +1,20 @@
+import { GoogleLogin } from "@react-oauth/google";
+import { CredentialResponse } from "@react-oauth/google"; // Explicit type for the response
 import { useState } from "react";
-import { X, ChevronLeft } from "lucide-react";
 import { useLogin } from "../context/LoginContext";
+import { useNavigate } from "react-router";
+import { ChevronLeft, X } from "lucide-react";
+import { jwtDecode } from "jwt-decode";
 
 const LoginModal = () => {
-  const [isEmailStep, setIsEmailStep] = useState(false); // Tracks if the email input step is active
-  const { closeModal } = useLogin();
+  const [isEmailStep, setIsEmailStep] = useState(false);
+  const { closeModal, login } = useLogin();
+  const navigate = useNavigate();
+
+  interface DecodedToken {
+    given_name: string;
+    picture: string;
+  }
 
   return (
     <div className='fixed inset-0 flex items-center justify-center bg-black/50 z-50'>
@@ -36,12 +46,30 @@ const LoginModal = () => {
               <h2 className='text-xl font-semibold'>You're one step away</h2>
               <p>From earning in global standards</p>
             </div>
-            <button
-              onClick={() => alert("Google Login")}
-              className='w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 mb-4'
-            >
-              Continue with Google
-            </button>
+            {/* Google Login Button */}
+            <GoogleLogin
+              onSuccess={(credentialResponse: CredentialResponse) => {
+                // Decode the JWT credential to get user info
+                const credential = credentialResponse.credential ?? ""; // Fallback to empty string if undefined
+                const decodedToken = jwtDecode<DecodedToken>(credential);
+
+                localStorage.setItem("userName", decodedToken.given_name ?? "");
+                localStorage.setItem("userPicture", decodedToken.picture ?? "");
+
+                // Pass user data to context (optional)
+                login({
+                  name: decodedToken.given_name,
+                  picture: decodedToken.picture,
+                });
+                navigate("/new/sponsor");
+                closeModal();
+              }}
+              onError={() => {
+                console.log("Error logging in");
+              }}
+              useOneTap
+              theme='outline' // Customize the button style
+            />
             <div className='flex justify-center items-center mb-4'>
               <div className='w-full h-1 text-gray-700' />
               OR

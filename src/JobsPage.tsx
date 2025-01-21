@@ -51,7 +51,128 @@ export default function JobsPage() {
         />
       ),
     },
+    {
+      id: 101,
+      title:
+        "Thread Contest: Write a detailed thread about the importance of hopping into Web3 early",
+      dueIn: 3,
+      company: "Hop",
+      reward: "400",
+      icon: (
+        <img
+          src='/src/assets/hop.png'
+          alt='hop'
+          className='w-16 h-16 rounded-xl'
+        />
+      ),
+    },
+    {
+      id: 102,
+      title:
+        "Art Contest: Design a creative poster showcasing Cetus and its potential in the Sui ecosystem",
+      dueIn: 3,
+      company: "Cetus",
+      reward: "450",
+      icon: (
+        <img
+          src='/src/assets/cetus.png'
+          alt='cetus'
+          className='w-16 h-16 rounded-xl'
+        />
+      ),
+    },
+    {
+      id: 103,
+      title:
+        "Thread Contest: Explain why Scallop stands out as a Web3 platform in a captivating thread",
+      dueIn: 3,
+      company: "Scallop",
+      reward: "500",
+      icon: (
+        <img
+          src='/src/assets/scallop.png'
+          alt='scallop'
+          className='w-16 h-16 rounded-xl'
+        />
+      ),
+    },
+    {
+      id: 104,
+      title:
+        "Art Contest: Create an engaging meme or artwork centered on Walrus in the blockchain space",
+      dueIn: 3,
+      company: "Walrus",
+      reward: "350",
+      icon: (
+        <img
+          src='/src/assets/walrus.png'
+          alt='walrus'
+          className='w-16 h-16 rounded-xl'
+        />
+      ),
+    },
+    {
+      id: 105,
+      title:
+        "Art Contest: Design a meme using the concept of 'fud' in the crypto world",
+      dueIn: 3,
+      company: "Fud",
+      reward: "300",
+      icon: (
+        <img
+          src='/src/assets/fud.png'
+          alt='fud'
+          className='w-16 h-16 rounded-xl'
+        />
+      ),
+    },
+    {
+      id: 106,
+      title:
+        "Thread Contest: Write a thread about the contributions of Studio Mirai to Web3",
+      dueIn: 3,
+      company: "Studio Mirai",
+      reward: "550",
+      icon: (
+        <img
+          src='/src/assets/studioMirai.png'
+          alt='studioMirai'
+          className='w-16 h-16 rounded-xl'
+        />
+      ),
+    },
+    {
+      id: 107,
+      title:
+        "Art Contest: Create a stunning visual to represent Sui’s future in blockchain",
+      dueIn: 3,
+      company: "Sui",
+      reward: "600",
+      icon: (
+        <img
+          src='/src/assets/sui.png'
+          alt='sui'
+          className='w-16 h-16 rounded-xl'
+        />
+      ),
+    },
+    {
+      id: 108,
+      title:
+        "Thread Contest: Highlight how 'Sui On Campus' can revolutionize blockchain education",
+      dueIn: 3,
+      company: "Sui On Campus",
+      reward: "400",
+      icon: (
+        <img
+          src='/src/assets/suiOnCampus.png'
+          alt='suiOnCampus'
+          className='w-16 h-16 rounded-xl'
+        />
+      ),
+    },
   ];
+
   const { isLoggedIn } = useLogin();
 
   return (

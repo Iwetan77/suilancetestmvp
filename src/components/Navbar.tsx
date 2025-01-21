@@ -1,9 +1,15 @@
 import { Link } from "react-router";
 import { useLogin } from "../context/LoginContext";
 import LoginModal from "./LoginModal";
+import { googleLogout } from "@react-oauth/google";
 
 const Navbar = () => {
-  const { isLoggedIn, logout, isModalOpen, openModal } = useLogin();
+  const { user, isLoggedIn, logout, isModalOpen, openModal } = useLogin();
+
+  const handleLogoutSuccess = () => {
+    googleLogout();
+    logout();
+  };
 
   return (
     <header className='sticky top-0 left-0 z-10 bg-white border-b border-gray-200'>
@@ -41,13 +47,22 @@ const Navbar = () => {
             </Link>
           </nav>
         </div>
+
         {isLoggedIn ? (
-          <button
-            onClick={logout}
-            className='rounded-lg bg-[#4DA2FF] px-6 py-2 font-medium text-white hover:bg-white hover:text-[#4DA2FF] transition duration-300'
-          >
-            Log Out
-          </button>
+          <div className='flex items-center gap-4'>
+            <img
+              src={user?.picture || "/default-avatar.jpg"}
+              alt='Profile'
+              className='w-8 h-8 rounded-full'
+            />
+            <span className='text-sm font-medium'>{user?.name}</span>
+            <button
+              onClick={handleLogoutSuccess}
+              className='rounded-lg bg-[#4DA2FF] px-6 py-2 font-medium text-white hover:bg-white hover:text-[#4DA2FF] transition duration-300'
+            >
+              Log Out
+            </button>
+          </div>
         ) : (
           <div className='flex gap-5'>
             <button
