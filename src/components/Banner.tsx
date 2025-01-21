@@ -3,10 +3,10 @@ import { useLogin } from "../context/LoginContext";
 
 const Banner: React.FC = () => {
   const socialProfiles = [
-    "/src/assets/freelancer2.jpg", // Replace with real URLs of profile pics
-    "/src/assets/bounty2.jpg",
-    "/src/assets/freelancer1.jpg",
-    "/src/assets/bounty1.jpg",
+    "/assets/freelancer2.jpg", // Replace with real URLs of profile pics
+    "/assets/bounty2.jpg",
+    "/assets/freelancer1.jpg",
+    "/assets/bounty1.jpg",
   ];
 
   const { openModal } = useLogin();
@@ -15,7 +15,7 @@ const Banner: React.FC = () => {
     <div
       className='relative bg-gradient-to-tr from-[#4DA2FF] to-transparent h-72 flex items-end rounded-xl text-white'
       style={{
-        backgroundImage: `url('/src/assets/hero.jpg')`, // Replace with your background image URL
+        backgroundImage: `url('/assets/hero.jpg')`, // Replace with your background image URL
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
