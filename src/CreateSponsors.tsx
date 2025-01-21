@@ -192,7 +192,7 @@ const CreateSponsorPage: React.FC = () => {
           type='submit'
           className='w-full bg-[#4DA2FF] text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 text-lg'
         >
-          Create Sponsor
+          Connect Wallet
         </button>
       </div>
 

@@ -2,14 +2,12 @@ import { GoogleLogin } from "@react-oauth/google";
 import { CredentialResponse } from "@react-oauth/google"; // Explicit type for the response
 import { useState } from "react";
 import { useLogin } from "../context/LoginContext";
-import { useNavigate } from "react-router";
 import { ChevronLeft, X } from "lucide-react";
 import { jwtDecode } from "jwt-decode";
 
 const LoginModal = () => {
   const [isEmailStep, setIsEmailStep] = useState(false);
   const { closeModal, login } = useLogin();
-  const navigate = useNavigate();
 
   interface DecodedToken {
     given_name: string;
@@ -61,7 +59,6 @@ const LoginModal = () => {
                   name: decodedToken.given_name,
                   picture: decodedToken.picture,
                 });
-                navigate("/new/sponsor");
                 closeModal();
               }}
               onError={() => {

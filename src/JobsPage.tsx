@@ -162,6 +162,7 @@ export default function JobsPage() {
   ];
 
   const { isLoggedIn } = useLogin();
+  const userName = localStorage.getItem("userName");
 
   return (
     <div className='min-h-screen bg-white'>
@@ -206,7 +207,9 @@ export default function JobsPage() {
           {/* Welcome Section */}
           {isLoggedIn ? (
             <div className='rounded-lg bg-[#4DA2FF] p-6'>
-              <h1 className='text-2xl font-bold text-white'>Welcome Adrian</h1>
+              <h1 className='text-2xl font-bold text-white'>
+                {userName ? `Welcome ${userName}` : "Welcome"}{" "}
+              </h1>
               <p className='text-white/80'>
                 Discover opportunities and start earning
               </p>

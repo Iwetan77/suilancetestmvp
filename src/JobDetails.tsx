@@ -8,7 +8,13 @@ const JobDetails: React.FC = () => {
           {/* Header Section */}
           <div className='flex items-center justify-between bg-blue-50 p-4'>
             <div className='flex items-center space-x-4'>
-              <div className='w-12 h-12 bg-gray-300 rounded-full'></div>
+              <div className=''>
+                <img
+                  src='/assets/suiOnCampus.png'
+                  alt='suiOnCampus'
+                  className='w-16 h-16 rounded-xl'
+                />
+              </div>
               <div>
                 <h1 className='text-xl font-bold text-gray-800'>
                   Illustrator for Blockchain Startup
