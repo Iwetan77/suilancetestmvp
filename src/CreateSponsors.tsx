@@ -1,6 +1,9 @@
 import React, { useState, ChangeEvent, useEffect } from "react";
 import { useLogin } from "./context/LoginContext";
 import { useNavigate } from "react-router";
+import { ConnectButton } from "@suiet/wallet-kit";
+import { WalletProvider } from "@suiet/wallet-kit";
+import "@suiet/wallet-kit/style.css";
 
 const CreateSponsorPage: React.FC = () => {
   const [profilePicture, setProfilePicture] = useState<File | null>(null);
@@ -188,12 +191,7 @@ const CreateSponsorPage: React.FC = () => {
         </div>
 
         {/* Submit Button */}
-        <button
-          type='submit'
-          className='w-full bg-[#4DA2FF] text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 text-lg'
-        >
-          Connect Wallet
-        </button>
+          <ConnectButton>Connect Wallet</ConnectButton >
       </div>
 
       {/* Footer */}
