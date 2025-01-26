@@ -19,7 +19,7 @@ const JobDetails: React.FC = () => {
                 <h1 className='text-xl font-bold text-gray-800'>
                   Illustrator for Blockchain Startup
                 </h1>
-                <p className='text-sm text-gray-500'>by SuiLabs</p>
+                <p className='text-sm text-gray-500'>by Sui on Campus</p>
               </div>
             </div>
             <div>
@@ -65,7 +65,7 @@ const JobDetails: React.FC = () => {
               <div>
                 <h2 className='text-xl font-bold text-gray-800'>Details</h2>
                 <p className='text-gray-600 mt-2'>
-                  SuiLabs is a blockchain-based startup building tools to
+                  Sui on Campus is looking to
                   empower freelancers and clients on the Sui blockchain. Our
                   goal is to decentralize and simplify the freelance economy,
                   offering secure and fast transactions with minimal fees.
