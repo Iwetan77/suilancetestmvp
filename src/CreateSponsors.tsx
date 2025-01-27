@@ -1,7 +1,6 @@
 import React, { useState, ChangeEvent } from "react";
 import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/clerk-react";
 import { ConnectButton } from "@suiet/wallet-kit";
-// import { WalletProvider } from "@suiet/wallet-kit";
 import "@suiet/wallet-kit/style.css";
 
 const CreateSponsorPage: React.FC = () => {
