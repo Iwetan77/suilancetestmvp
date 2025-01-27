@@ -1,13 +1,12 @@
 import React, { useState, ChangeEvent } from "react";
 import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/clerk-react";
-import { useNavigate } from "react-router-dom"; // Ensure react-router-dom is used
 import { ConnectButton } from "@suiet/wallet-kit";
+// import { WalletProvider } from "@suiet/wallet-kit";
 import "@suiet/wallet-kit/style.css";
 
 const CreateSponsorPage: React.FC = () => {
   const [profilePicture, setProfilePicture] = useState<File | null>(null);
   const [companyLogo, setCompanyLogo] = useState<File | null>(null);
-  const navigate = useNavigate();
 
   const handleFileChange = (
     e: ChangeEvent<HTMLInputElement>,
