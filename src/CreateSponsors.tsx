@@ -284,7 +284,7 @@ const CreateSponsorPage: React.FC = () => {
 
             {/* Wallet Connection and Submit Button */}
             <div className="flex flex-col gap-4">
-              <ConnectButton />
+             <ConnectButton>Connect Wallet</ConnectButton >
               
               {connected && (
                 <button
