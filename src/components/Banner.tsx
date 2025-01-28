@@ -1,5 +1,6 @@
 import React from "react";
 import { useLogin } from "../context/LoginContext";
+import { SignedIn, SignedOut } from "@clerk/clerk-react";
 
 const Banner: React.FC = () => {
   const socialProfiles = [
@@ -33,12 +34,17 @@ const Banner: React.FC = () => {
           decentralized world.
         </p>
         <div>
+          <SignedIn>
+            {""}
+          </SignedIn>
+          <SignedOut>
           <button
             onClick={() => openModal()}
             className='flex rounded-lg bg-white text-[#4DA2FF] font-medium px-6 py-2 shadow-md hover:bg-[#4DA2FF] hover:text-white transition duration-300'
           >
             Sign Up
           </button>
+          </SignedOut>
         </div>
 
         {/* Social Profiles */}

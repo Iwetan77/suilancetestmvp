@@ -4,20 +4,24 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 import { BrowserRouter } from "react-router";
+import { ClerkProvider } from "@clerk/clerk-react"
 import { LoginProvider } from "./context/LoginContext.tsx";
-import { GoogleOAuthProvider } from "@react-oauth/google";
+import { WalletProvider } from "@suiet/wallet-kit";
+import "@suiet/wallet-kit/style.css";
 
-const OAuthClientID = import.meta.env.VITE_OAUTH_CLIENT_ID;
-// const OAuthClientID = VITE_OAUTH_CLIENT_ID;
+
+const clerkPubKey = import.meta.env.VITE_CLERK_PUBKEY;
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <GoogleOAuthProvider clientId={OAuthClientID}>
       <LoginProvider>
+      <ClerkProvider publishableKey={clerkPubKey} >
+        <WalletProvider>
         <BrowserRouter>
           <App />
         </BrowserRouter>
+        </WalletProvider>
+      </ClerkProvider>
       </LoginProvider>
-    </GoogleOAuthProvider>
   </StrictMode>
 );
